@@ -2,6 +2,15 @@
 
 #create an account on system, prompts for username password
 
+#root or not
+if [[ "${UID}" -eq 0 ]]
+then
+  echo 'you are root, continue.'
+else
+  echo 'you are not root.'
+  exit
+fi
+
 #ask username
 read -p "enter username: " USER_NAME
 #ask real name
